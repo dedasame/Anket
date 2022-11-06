@@ -5,6 +5,9 @@ public class Anket {
 
 	public static void main(String[] args) {
 		
+		int temp =1;
+		
+		while(temp==1){	
 		Scanner input = new Scanner(System.in);
 		int kontrol=1;
 		int kisiSayisi=0;
@@ -48,6 +51,7 @@ public class Anket {
 			}
 			System.out.println("");
 		}
+		
 		double[] toplam = new double[5];
 		for(int m=0;m<5;m++) {
 			for(int n=0;n<10;n++) {
@@ -61,14 +65,31 @@ public class Anket {
 			}
 		
 		String[] sorular = {"Ekonomi","Kuresel Isinma","Enerji","Teknoloji","Kultur"};
+		
+		for(int k=0;k<4;k++) {
+			for(int m=k+1;m<=4;m++){
+				if(toplam[k]<toplam[m]) {
+					double temp2 = toplam[m];
+					toplam[m] = toplam[k];
+					toplam[k]=temp2;
+					
+					String tempString = sorular[m];
+					sorular[m] = sorular[k];
+					sorular[k] = tempString;
+				}	
+			}
+		}
+		
 		for(int p=0;p<5;p++) {
 			System.out.println(sorular[p] +" "+ toplam[p]);
 		}
 		
-		Arrays.sort(toplam);
+		System.out.printf("En fazla puan alan: %f puan ile %s  \n",toplam[0],sorular[0] );
+		System.out.printf("En az puan alan: %f puan ile %s   \n",toplam[4],sorular[4]);
 		
+		System.out.println("Anketi yeniden baslatmak icin 1'i tuslayin:");
+		temp= input.nextInt();
 		
-		//toplami buyukten kucuge sirala ve test bittikten sonra tekrar sor.
-		
+		}
 	}
 }
