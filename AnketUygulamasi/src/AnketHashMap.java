@@ -92,7 +92,6 @@ public class AnketHashMap {
 		}
 		
 		
-		
 		System.out.println("Testi yeniden baslatmak icin 1'i tuslayin.");
 		anaKontrol=input.nextInt();
 		}
