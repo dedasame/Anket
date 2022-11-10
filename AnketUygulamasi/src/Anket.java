@@ -14,6 +14,8 @@ public class Anket {
 		
 		int[][] cevaplar = new int[5][10];
 		
+		String[] sorular = {"Ekonomi","Kuresel Isinma","Enerji","Teknoloji","Kultur"};
+
 		
 		while(kontrol==1) {	
 		kisiSayisi++;
@@ -44,8 +46,8 @@ public class Anket {
 		kontrol = input.nextInt();	
 		}
 		
-		
 		for(int k=0;k<5;k++) {
+			
 			for(int j=0;j<10;j++) {
 				System.out.printf("%d",cevaplar[k][j]);
 			}
@@ -63,8 +65,6 @@ public class Anket {
 			double ortalama = sayilar/kisiSayisi;
 			System.out.println(ortalama);
 			}
-		
-		String[] sorular = {"Ekonomi","Kuresel Isinma","Enerji","Teknoloji","Kultur"};
 		
 		for(int k=0;k<4;k++) {
 			for(int m=k+1;m<=4;m++){
