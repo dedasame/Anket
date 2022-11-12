@@ -1,5 +1,16 @@
-import java.util.HashMap;
+import java.text.ParseException; 
+import java.util.ArrayList; 
+import java.util.Collections; 
+import java.util.Comparator; 
+import java.util.HashMap; 
+import java.util.LinkedHashMap; 
+import java.util.List; 
+import java.util.Map.Entry;
 import java.util.Scanner;
+import java.util.Set; 
+import java.util.TreeMap;
+
+
 
 public class AnketHashMap {
 
@@ -60,7 +71,7 @@ public class AnketHashMap {
 			e+=puan;
 			puan=0;
 
-			System.out.println("Teste girmek icin 1 testi bitirmek icin 2'ye basin.");
+			System.out.println("Teste yeniden girmek icin 1 testi bitirmek icin 2'ye basin.");
 			kontrol = input.nextInt();	
 		}		
 		
@@ -91,8 +102,9 @@ public class AnketHashMap {
 			System.out.println(i+":"+ortalama.get(i));
 		}
 		
+	
 		
-		System.out.println("Testi yeniden baslatmak icin 1'i tuslayin.");
+		System.out.println("Testi sifirlamak ve yeniden baslatmak icin 1'i tuslayin.");
 		anaKontrol=input.nextInt();
 		}
 		System.out.println("Testen ciktiniz.");
