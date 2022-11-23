@@ -102,8 +102,34 @@ public class AnketHashMap {
 			System.out.println(i+":"+ortalama.get(i));
 		}
 		
-	
+		// Siralama kodlari 
+		Set<Entry<String, Double>> ortalama2 = ortalama.entrySet();
 		
+		Comparator<Entry<String, Double>> valueComparator = new Comparator<Entry<String,Double>>() { 
+			
+		public int compare(Entry<String, Double> e1, Entry<String, Double> e2) { 
+			Double v1 = e1.getValue(); Double v2 = e2.getValue(); return v1.compareTo(v2); 
+			} 
+		};
+		
+		List<Entry<String, Double>> ortalamaListe = new ArrayList<Entry<String, Double>>(ortalama2);
+		
+		Collections.sort(ortalamaListe, valueComparator);
+		
+		LinkedHashMap<String, Double> sortedByValue = new LinkedHashMap<String, Double>(ortalamaListe.size());
+		
+		for(Entry<String, Double> entry : ortalamaListe){ 
+			sortedByValue.put(entry.getKey(), entry.getValue());
+			}
+		
+		System.out.println("------Kucukten Buyuge siralanmis hali------");
+		
+		Set<Entry<String,Double>> entrySetSortedByValue = sortedByValue.entrySet();
+		
+		for(Entry<String,Double> mapping : entrySetSortedByValue){ 
+			System.out.println(mapping.getKey() + " : " + mapping.getValue()); 
+			}
+
 		System.out.println("Testi sifirlamak ve yeniden baslatmak icin 1'i tuslayin.");
 		anaKontrol=input.nextInt();
 		}
